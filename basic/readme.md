@@ -283,3 +283,9 @@ echo mb_substr($str,0,10,"utf8");
 # mb_substr(字串,起始位置,長度,編碼)
 ```
 
+## 補充網站
+* [Array Method(W3 School)](https://www.w3schools.com/php/php_ref_array.asp)
+* [Array Method(PHP Official)](https://www.php.net/manual/en/ref.array.php)
+* [亂數甲文 LIPSUM](https://www.lipsum.com/)
+* [String Method(W3 School)](https://www.w3schools.com/php/php_ref_string.asp)
+* [String Method(PHP Official)](https://www.php.net/manual/en/ref.strings.php)
