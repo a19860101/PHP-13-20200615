@@ -10,5 +10,8 @@
         <input type="file" name="img">
         <input type="submit" value="上傳">
     </form>
+    <div>
+        <?php echo md5(uniqid());?>
+    </div>
 </body>
 </html>
