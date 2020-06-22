@@ -6,8 +6,9 @@
     $edu = $_POST["edu"];
 
     $skills = implode("__",$_POST["skill"]);
+    $comment = $_POST["commen"];
 
-    echo $skills;
+    // echo $skills;
     // echo $skills;
     // var_dump($skills);
     // foreach($skills as $skill){

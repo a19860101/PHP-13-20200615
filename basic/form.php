@@ -37,6 +37,9 @@
             <input type="checkbox" name="skill[]" value="網頁設計">網頁設計
             <input type="checkbox" name="skill[]" value="3d設計">3d設計
         </div>
+        <div>
+            <textarea name="comment" id="" cols="30" rows="10"></textarea>
+        </div>
         <input type="submit" value="送出">
     </form>
     <!-- <h1>Get</h1>
