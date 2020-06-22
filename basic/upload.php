@@ -27,6 +27,6 @@
     if($error == 0){
         if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";
-            header("Refresh:3;url=file.php");
+            header("Refresh:1;url=file.php");
         }
     }
