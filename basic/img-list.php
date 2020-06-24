@@ -16,9 +16,20 @@
             foreach($imgs as $img){
                 // echo $img;
                 // echo "<br>";
-                echo "<img src='{$img}' width='200'>";
-            }
-        ?>
+                // echo "<img src='{$img}' width='200'>";
+                ?>
+        <div>
+            <img src="<?php echo $img?>" width="200">
+            <a href="?del=<?php echo $img;?>">刪除</a>
+        </div>
+        <?php }?>
     </div>
+
+    <?php
+        if(isset($_GET["del"])){
+            unlink($_GET["del"]);
+            header("location:img-list.php");
+        }
+    ?>
 </body>
 </html>
