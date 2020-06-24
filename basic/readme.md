@@ -1,5 +1,5 @@
 # PHP基礎
-
+ 
 ## 變數 variable
 ### 規則
 1. 首字不可為數字
@@ -59,7 +59,6 @@ echo $x %= $y; //$x = $x % $y
 * && - AND
 * || - OR
 * ! - NOT
-* XOR
 ```php
 $x = 100;
 $y = 30;
@@ -185,12 +184,6 @@ $a = array("HTML","CSS","JAVASCRIPT");
 $a = ["HTML","CSS","JAVASCRIPT"];
 ```
 
-### 帶有鍵值的陣列
-```php
-$drinks = ["紅茶"=>20,"綠茶"=>20,"奶茶"=>30,"珍珠奶茶"=>40];
-$letters = ["A"=>"Apple","B"=>"Banana","C"=>"Cat"];
-```
-
 ### 迭代陣列
 ```php
 //for迴圈
@@ -200,12 +193,6 @@ for($i=0;$i<count($a);$i++){
 //foreach迴圈
 foreach($a as $item){
     echo $item;
-}
-foreach($drinks as $key => $value){
-    echo $key.":".$value;
-}
-foreach($letters as $letter => $word){
-    echo $letter." for ".$word;
 }
 ```
 
@@ -238,6 +225,30 @@ var_dump(is_array($x));
 //bool(false)
 ```
 
+#### array_push()
+新增一個值到陣列最後
+```php
+$a = ["HTML","CSS","JAVASCRIPT"];
+array_push($a,"ASP.NET","SQL SERVER","VUE","REACT");
+
+#也可以使用count()方法來新增
+$a[count($a)] = "PHP";
+```
+#### array_pop()
+移除最後一個陣列值
+```php
+array_pop($a);
+```
+#### array_unshift()
+新增一個值到陣列最前方
+```php
+array_unshift($a,"QQQ");
+```
+#### array_shift()
+移除第一個陣列值
+```php
+array_shift($a);
+```
 
 #### compact()
 ```php
@@ -282,10 +293,92 @@ echo substr($str,0,9);
 echo mb_substr($str,0,10,"utf8");
 # mb_substr(字串,起始位置,長度,編碼)
 ```
+#### nl2br()
+自動換行 
+#### md5(),sha1()
+md5與sha1加密
+```php
+$pw = "hello";
+echo md5($pw);
+echo sha1($pw);
+```
+#### crypt()
+crypt加密
+```php
+$pw = "hello";
+echo crypt($pw,"sr");
+```
+#### strip_tags()
+移除HTML標籤
+```php
+$s = "<h1>哈囉你好嗎?</h1>";
+echo strip_tags($s);
+```
+## function 函式
+```php
+function test(){
+    echo "hello test";
+}
+test();
+//hello test
+function test(){
+    return "hello return";
+}
+echo test();
+// hello return
+function q($x,$y){
+    return $x + $y;
+}
+echo q(10,4);
+//14
+function qq($x=100,$y=1000){
+    return $x + $y;
+}
+echo qq();
+//1100
+echo qq(3,4);
+//7
 
+```
+### include 與 require
+```php
+/* 
+include遇到錯誤會繼續執行
+require遇到錯誤會終止執行
+*/
+include("xxx.php");
+require("xxx.php");
+/* 
+包含once的會偵測是否曾經載入過相同檔案，如果有載入過則不會再載入；反之如果沒有載入才會載入
+*/
+include_once("xxx.php");
+require_once("xxx.php");
+```
+
+## 資料傳遞
+### post
+* 傳送的值由POST請求HTTP發送，且POST的請求不會被Cache紀錄、POST的請求對資料長度沒有限制，因此POST比GET更安全，所以較適合用來傳送隱密性較高的資料
+* 透過$_POST接收
+### get
+* 傳送的值由GET請求URL發送，在網址列會看到"http://www.xxx.com/test/index.php?test1=value1&test2=value2"
+使用GET傳遞並不適合傳送些隱密性較高的資料，而GET的請求會被Cache紀錄、GET的請求受限於 QueryString 長度限制(依瀏覽器規定)，因此GET的使用時機應為檢視資料時使用
+* 透過$_GET接收
+### 檔案上傳
+#### uniqid()
+#### $_FILES
+接收上傳檔案的資料。
+#### glob()
+抓取資料，回傳值為Array。
+```php
+glob("images/*");
+//抓取所有images內的檔案
+glob("images/*.jpg");
+//抓取images內的jpg檔案
+```
 ## 補充網站
 * [Array Method(W3 School)](https://www.w3schools.com/php/php_ref_array.asp)
 * [Array Method(PHP Official)](https://www.php.net/manual/en/ref.array.php)
 * [亂數甲文 LIPSUM](https://www.lipsum.com/)
 * [String Method(W3 School)](https://www.w3schools.com/php/php_ref_string.asp)
 * [String Method(PHP Official)](https://www.php.net/manual/en/ref.strings.php)
+
