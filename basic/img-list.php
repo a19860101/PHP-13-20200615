@@ -13,6 +13,13 @@
         <?php 
             $imgs = glob("images/*");
             // var_dump($imgs);
+            $img_num = count($imgs);
+            // echo $img_num;
+            if($img_num == 0){
+                echo "目前尚無圖片";
+            }else{
+                echo "共有{$img_num}張圖片";
+            }
             foreach($imgs as $img){
                 // echo $img;
                 // echo "<br>";
