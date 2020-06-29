@@ -34,6 +34,7 @@
         <th>MAIL</th>
         <th>性別</th>
         <th>學歷</th>
+        <th>動作</th>
     </tr>
     <?php while($row = mysqli_fetch_assoc($result)){ ?> 
     <tr>
@@ -42,6 +43,9 @@
         <td><?php echo $row["mail"];?></td>
         <td><?php echo $row["gender"];?></td>
         <td><?php echo $row["edu"];?></td>
+        <td>
+            <a href="detail.php?id=<?php echo $row["id"];?>">檢視</a>
+        </td>
     </tr>
     <?php } ?>
 </table>
