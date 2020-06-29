@@ -45,6 +45,7 @@
         <td><?php echo $row["edu"];?></td>
         <td>
             <a href="detail.php?id=<?php echo $row["id"];?>">檢視</a>
+            <a href="edit.php?id=<?php echo $row["id"];?>">編輯</a>
         </td>
     </tr>
     <?php } ?>
