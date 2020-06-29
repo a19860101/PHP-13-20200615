@@ -55,6 +55,7 @@
             備註
             <textarea name="comment" cols="30" rows="10"><?php echo $row["comment"];?></textarea>
         </div>
+        <input type="hidden" name="id" value="<?php echo $row["id"];?>">
         <input type="submit" value="儲存">
     </form>
 </body>
