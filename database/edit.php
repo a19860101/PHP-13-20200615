@@ -1,3 +1,10 @@
+<?php
+    require_once("conn.php");
+    $id = $_GET["id"];
+    $sql = "SELECT * FROM students WHERE id = {$id}";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,26 +17,29 @@
     <form action="update.php" method="post">
         <div>
             姓名
-            <input type="text" name="user">
+            <input type="text" name="user" value="<?php echo $row["user"];?>">
         </div>
         <div>
             Mail
-            <input type="text" name="mail">
+            <input type="text" name="mail" value="<?php echo $row["mail"];?>">
         </div>
         <div>
             性別
-            <input type="radio" name="gender" value="男">男
-            <input type="radio" name="gender" value="女">女
-            <input type="radio" name="gender" value="不透漏">不透漏
+            <!-- <input type="radio" name="gender" value="男" <?php #if($row["gender"]=="男"){echo "checked";}?>>男 -->
+            <!-- <input type="radio" name="gender" value="女" <?php #if($row["gender"]=="女"){echo "checked";}?>>女 -->
+            <!-- <input type="radio" name="gender" value="不透漏" <?php #if($row["gender"]=="不透漏"){echo "checked";}?>>不透漏 -->
+            <input type="radio" name="gender" value="男" <?php echo $row["gender"]=="男"?"checked":"";  ?>>男
+            <input type="radio" name="gender" value="女" <?php echo $row["gender"]=="女"?"checked":""; ?>>女
+            <input type="radio" name="gender" value="不透漏" <?php echo $row["gender"]=="不透漏"?"checked":""; ?>>不透漏
         </div>
         <div>
             教育程度
             <select name="edu">
-                <option value="國小">國小</option>
-                <option value="國中">國中</option>
-                <option value="高中職">高中職</option>
-                <option value="大專院校">大專院校</option>
-                <option value="研究所以上">研究所以上</option>
+                <option value="國小"        <?php echo $row["edu"]=="國小"?"selected":"";?>>國小</option>
+                <option value="國中"        <?php echo $row["edu"]=="國中"?"selected":"";?>>國中</option>
+                <option value="高中職"      <?php echo $row["edu"]=="高中職"?"selected":"";?>>高中職</option>
+                <option value="大專院校"    <?php echo $row["edu"]=="大專院校"?"selected":"";?>>大專院校</option>
+                <option value="研究所以上"  <?php echo $row["edu"]=="研究所以上"?"selected":"";?>>研究所以上</option>
             </select>
         </div>
         <div>
@@ -40,7 +50,7 @@
         </div>
         <div>
             備註
-            <textarea name="comment" cols="30" rows="10"></textarea>
+            <textarea name="comment" cols="30" rows="10"><?php echo $row["comment"];?></textarea>
         </div>
         <input type="submit" value="儲存">
     </form>
