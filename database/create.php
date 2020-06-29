@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>hello 新增學員資料</h1>
-    <form action="" method="post">
+    <form action="store.php" method="post">
         <div>
             姓名
             <input type="text" name="user">
