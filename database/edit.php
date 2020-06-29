@@ -44,9 +44,12 @@
         </div>
         <div>
             專長
-            <input type="checkbox" name="skill[]" value="平面設計">平面設計
-            <input type="checkbox" name="skill[]" value="網頁設計">網頁設計
-            <input type="checkbox" name="skill[]" value="影片剪輯">影片剪輯
+            <?php 
+                $skills = explode(",",$row["skill"]);
+            ?>
+            <input type="checkbox" name="skill[]" value="平面設計" <?php if(in_array("平面設計",$skills)){echo "checked";}?>>平面設計
+            <input type="checkbox" name="skill[]" value="網頁設計" <?php if(in_array("網頁設計",$skills)){echo "checked";}?>>網頁設計
+            <input type="checkbox" name="skill[]" value="影片剪輯" <?php echo in_array("影片剪輯",$skills)?"checked":"";?>>影片剪輯
         </div>
         <div>
             備註
