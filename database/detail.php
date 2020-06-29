@@ -1,3 +1,10 @@
+<?php
+    require_once("conn.php");
+    $id = $_GET["id"];
+    $sql = "SELECT * FROM students WHERE id = {$id}";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +14,14 @@
 </head>
 <body>
     <h1>hello 學員資料</h1>
-    <h1><?php echo $_GET["id"];?></h1>
+    <ul>
+        <li>姓名:<?php echo $row["user"];?></li>
+        <li>Mail:<?php echo $row["mail"];?></li>
+        <li>性別:<?php echo $row["gender"];?></li>
+        <li>學歷:<?php echo $row["edu"];?></li>
+        <li>專長:<?php echo $row["skill"];?></li>
+        <li>備註:<?php echo $row["comment"];?></li>
+        <li>建立時間:<?php echo $row["create_at"];?></li>
+    </ul>
 </body>
 </html>
