@@ -23,5 +23,9 @@
         <li>備註:<?php echo $row["comment"];?></li>
         <li>建立時間:<?php echo $row["create_at"];?></li>
     </ul>
+    <form action="delete.php" method="post">
+        <input type="hidden" value="<?php echo $row["id"];?>" name="id">
+        <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
+    </form>
 </body>
 </html>
