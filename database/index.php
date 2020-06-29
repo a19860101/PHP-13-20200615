@@ -23,7 +23,10 @@
     </style>
 </head>
 <body>
-<h1>hello php</h1>
+<h1>hello 學員資料</h1>
+<nav>
+    <a href="create.php">新增學員資料</a>
+</nav>
 <table>
     <tr>
         <th>#</th>
