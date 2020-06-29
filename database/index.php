@@ -1,22 +1,13 @@
 <?php
     require_once("conn.php");
     $sql = "SELECT * FROM students";
-    $result = mysqli_query($conn,"SELECT * FROM students");
-    $row = mysqli_fetch_assoc($result);
-
+    $result = mysqli_query($conn,$sql);
+    // var_dump($result);
+    // $row = mysqli_fetch_assoc($result);
     // $row = mysqli_fetch_row($result);
     // $row = mysqli_fetch_array($result);
-    echo $row["user"];
-    echo "<br>";
-    echo $row["mail"];
-    echo "<br>";
-    echo $row["gender"];
-    echo "<br>";
-    echo $row["edu"];
-    echo "<br>";
-    echo $row["create_at"];
-    echo "<br>";
-    ?>
+    // var_dump($row);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,5 +17,14 @@
 </head>
 <body>
 <h1>hello php</h1>
+<?php
+    while($row = mysqli_fetch_assoc($result)){
+        echo $row["user"];
+        echo $row["mail"];
+        echo $row["gender"];
+        echo $row["edu"];
+        echo "<hr>";
+    }
+?>
 </body>
 </html>
