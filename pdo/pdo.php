@@ -11,7 +11,7 @@
     try {
         $dsn = "mysql:host={$db_host};dbname={$db_name};charset={$db_charset}";
         $pdo = new PDO($dsn,$db_user,$db_pw);   
-        echo "連線成功";
+        // echo "連線成功";
     }catch(PDOException $e){
         echo $e->getMessage();
     }
