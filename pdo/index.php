@@ -28,6 +28,9 @@
     </style>
 </head>
 <body>
+    <nav>
+        <a href="create.php">新增學員資料</a>
+    </nav>
     <table>
         <tr>
             <th>#</th>
