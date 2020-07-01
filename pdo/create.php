@@ -43,6 +43,8 @@
             <textarea name="comment" cols="30" rows="10"></textarea>
         </div>
         <input type="submit" value="新增">
+        <input type="button" value="取消" onclick="history.back()">
+
     </form>
 </body>
 </html>

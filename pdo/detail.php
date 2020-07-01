@@ -31,6 +31,8 @@
     <form action="delete.php" method="post">
         <input type="hidden" value="<?php echo $row["id"];?>" name="id">
         <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
+        <input type="button" value="回上頁" onclick="history.back()">
+
     </form>
 </body>
 </html>
