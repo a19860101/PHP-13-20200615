@@ -1,5 +1,5 @@
-<?php    
-    try {
+<?php
+    try{
         require_once("pdo.php");
         $user = $_POST["user"];
         $mail = $_POST["mail"];
@@ -7,10 +7,10 @@
         $edu = $_POST["edu"];
         $skill = implode(",",$_POST["skill"]);
         $comment = $_POST["comment"];
-        $create_at = date("Y-m-d H:i:s");
-        $sql = "INSERT INTO students(user,mail,gender,edu,skill,comment,create_at)VALUES(?,?,?,?,?,?,?)";
+        $id = $_POST["id"];
+        $sql = "UPDATE students SET user=?,mail=?,gender=?,edu=?,skill=?,comment=? WHERE id=?";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$user,$mail,$gender,$edu,$skill,$comment,$create_at]);
+        $stmt->execute([$user,$mail,$gender,$edu,$skill,$comment,$id]);
         header("location:index.php");
     }catch(PDOException $e){
         echo $e->getMessage();
