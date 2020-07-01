@@ -1,4 +1,5 @@
 <?php
+// echo date_default_timezone_get();
     try {
         require_once("pdo.php");
         $sql = "SELECT * FROM students";

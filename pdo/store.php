@@ -1,4 +1,6 @@
 <?php
+    date_default_timezone_set("Asia/Taipei");
+    
     try {
         require_once("pdo.php");
         $user = $_POST["user"];
