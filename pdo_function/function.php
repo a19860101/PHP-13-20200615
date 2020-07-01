@@ -16,3 +16,17 @@
             echo $e->getMessage();
         }
     }
+    function show($id){
+        try{
+            // require_once("pdo.php");
+            // $id = $_GET["id"];
+            global $pdo;
+            $sql = "SELECT * FROM students WHERE id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$id]);
+            $row = $stmt->fetch();
+            return $row;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
