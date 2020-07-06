@@ -10,6 +10,12 @@
     $white = imagecolorallocate($canvas,255,255,255);
 
     imagefill($canvas,0,0,$white);
+    imageline($canvas,0,0,800,600,$red);
+    imageline($canvas,0,600,800,0,$blue);
 
+    header("content-type:image/png");
+    imagepng($canvas,"test.png");
+    header("content-type:image/gif");
+    imagegif($canvas,"test.gif");
     header("content-type:image/jpeg");
-    imagejpeg($canvas);
+    imagejpeg($canvas,"test.jpeg");
