@@ -1,4 +1,5 @@
 <?php
+    session_start();
     try {
         require_once("pdo.php");
         $user = $_POST["user"];
@@ -12,6 +13,9 @@
         $row = $stmt->fetch();
         if($pw == $row["pw"]){
             echo "登入成功";
+            $_SESSION["USER"] = $user;
+            $_SESSION["LV"] = $row["level"];
+            echo "會員:{$_SESSION["USER"]},權限:{$_SESSION["LV"]}";
         }else{
             echo "登入失敗";
         }
