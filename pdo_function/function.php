@@ -40,6 +40,17 @@
             echo $e->getMessage();
         }
     }
+    function update($user,$mail,$gender,$edu,$skill,$comment,$id){
+        try{
+            global $pdo;
+            $sql = "UPDATE students SET user=?,mail=?,gender=?,edu=?,skill=?,comment=? WHERE id=?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$user,$mail,$gender,$edu,$skill,$comment,$id]);
+            
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
     function delete($id){
         try{
             // require_once("pdo.php");
