@@ -30,6 +30,16 @@
             echo $e->getMessage();
         }
     }
+    function store($user,$mail,$gender,$edu,$skill,$comment,$create_at){
+        try {
+            global $pdo;            
+            $sql = "INSERT INTO students(user,mail,gender,edu,skill,comment,create_at)VALUES(?,?,?,?,?,?,?)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$user,$mail,$gender,$edu,$skill,$comment,$create_at]);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
     function delete($id){
         try{
             // require_once("pdo.php");
