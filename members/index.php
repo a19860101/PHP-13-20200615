@@ -22,6 +22,9 @@
         </div>
         <input type="submit" value="登入">
     </form>
+    <nav>
+        <a href="create.php">申請會員</a>
+    </nav>
 <?php }else{ ?>
     <?php echo  $_SESSION["USER"]."你好";?>
     <a href="logout.php">登出</a>
