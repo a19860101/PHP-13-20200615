@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">首頁</a>
+        <a class="nav-link" href="create_post.php">新增文章</a>
       </li>
     </ul>
   </div>
