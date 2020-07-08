@@ -18,8 +18,9 @@
         $row_num = $stmt_check->rowCount();
         echo $row_num;
         if($row_num > 0){
-            header("Refresh:3;url=create.php");
-            echo "帳號重複，請重新申請";
+            // header("Refresh:3;url=create.php");
+            // echo "帳號重複，請重新申請";
+            header("location:create.php?error=account_repeat");
         }else{
             $sql = "INSERT INTO members(user,pw,create_at)VALUES(?,?,?)";
             $stmt = $pdo->prepare($sql);
