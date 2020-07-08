@@ -16,6 +16,7 @@
             $_SESSION["USER"] = $user;
             $_SESSION["LV"] = $row["level"];
             echo "會員:{$_SESSION["USER"]},權限:{$_SESSION["LV"]}";
+            header("Refresh:3;url=index.php");
         }else{
             echo "登入失敗";
         }
