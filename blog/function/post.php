@@ -1,10 +1,8 @@
 <?php
     function showAll(){
         try {
-            // require_once("pdo.php");
             global $pdo;
-            $sql = "SELECT * FROM students";
-            #預備陳述式
+            $sql = "SELECT * FROM posts";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $rows = array();
