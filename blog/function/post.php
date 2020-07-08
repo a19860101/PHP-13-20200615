@@ -1,8 +1,8 @@
 <?php
-    function showAll(){
+    function showAll($order="DESC"){
         try {
             global $pdo;
-            $sql = "SELECT * FROM posts";
+            $sql = "SELECT * FROM posts ORDER BY id {$order}";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $rows = array();
