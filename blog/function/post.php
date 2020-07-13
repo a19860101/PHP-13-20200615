@@ -2,7 +2,13 @@
     function showAll($order="DESC"){
         try {
             global $pdo;
-            $sql = "SELECT * FROM posts ORDER BY id {$order}";
+            // $sql = "SELECT * FROM posts ORDER BY id {$order}";
+            $sql = "
+                SELECT posts.* ,categories.title AS c_title FROM posts 
+                LEFT JOIN categories
+                ON posts.c_id = categories.id
+                ORDER BY id {$order}
+            ";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $rows = array();

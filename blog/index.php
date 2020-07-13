@@ -10,6 +10,7 @@
         <?php foreach($rows as $row){ ?>
         <div class="col-10 my-3 border p-5">
             <h2 class="my-3"><?php echo $row["title"];?></h2>
+            <span>分類:<?php echo $row["c_title"];?></span>
             <div>
                 <?php echo mb_substr(strip_tags($row["content"]),0,150,"utf-8");?>...
             </div>
