@@ -19,3 +19,7 @@
     </div>
 </div>
 <?php include("template/footer.php");?>
+<script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'content' );
+</script>
