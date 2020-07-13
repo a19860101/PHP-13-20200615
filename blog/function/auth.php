@@ -13,11 +13,9 @@
             $stmt->execute([$user]);
             $row = $stmt->fetch();
             if($pw == $row["pw"]){
-                echo "登入成功";
                 $_SESSION["USER"] = $user;
                 $_SESSION["LV"] = $row["level"];
-                echo "會員:{$_SESSION["USER"]},權限:{$_SESSION["LV"]}";
-                header("Refresh:3;url=index.php");
+                echo "<script>alert('登入成功');</script>";
             }else{
                 echo "登入失敗";
             }

@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <form action="">
+            <form action="auth.php" method="post">
                 <div class="form-group">
                     <label for="user">帳號</label>
                     <input type="text" name="user" id="user" class="form-control">
