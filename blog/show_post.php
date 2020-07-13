@@ -19,6 +19,7 @@
             </div>
             <div>
                 <a href="#" class="btn btn-info" onclick="history.back()">回上頁</a>
+                <a href="edit_post.php?id=<?php echo $row["id"];?>" class="btn btn-success">編輯</a>
                 <form action="delete_post.php" method="post">
                     <input type="hidden" value="<?php echo $row["id"];?>" name="id">
                     <input type="submit" value="刪除" class="btn btn-danger" onclick="return confirm('確認刪除？')">
