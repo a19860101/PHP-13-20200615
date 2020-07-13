@@ -1,7 +1,9 @@
 <?php 
     include("pdo.php");
     include("function/post.php");
+    include("function/cate.php");
     $row = show($_GET["id"]);
+    $cates = showAllCate();
 ?>
 <?php include("template/header.php");?>
 <?php include("template/nav.php");?>
@@ -16,6 +18,16 @@
                 <div class="form-group">
                     <label for="content">文章內文</label>
                     <textarea name="content" id="content" class="form-control" cols="30" rows="10"><?php echo $row["content"];?></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="c_id">文章分類</label>
+                    <select name="c_id" id="c_id" class="form-control">
+                    <?php foreach($cates as $cate){ ?>
+                        <option value="<?php echo $cate["id"];?>" 
+                        <?php echo $cate["id"]===$row["c_id"] ? "selected":"" ?>
+                        ><?php echo $cate["title"];?></option>
+                    <?php } ?>
+                    </select>
                 </div>
                 <input type="hidden" value="<?php echo $row["id"];?>" name="id">
                 <input type="submit" value="儲存" class="btn btn-primary">
