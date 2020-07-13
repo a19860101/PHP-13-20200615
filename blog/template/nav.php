@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="index.php">QQ BLOG</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,15 +11,24 @@
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
+    <?php if(!$_SESSION){ ?>
+      <li class="nav-item">
+        <a href="#" class="nav-link">訪客您好</a>
+      </li>
       <li class="nav-item">
         <a href="login.php" class="nav-link">登入</a>
       </li>
       <li class="nav-item">
         <a href="#" class="nav-link">申請會員</a>
       </li>
+      <?php }else{ ?>
       <li class="nav-item">
-        <a href="#" class="nav-link">登出</a>
+        <a href="#"class="nav-link"><?php echo $_SESSION["USER"];?>您好</a>
       </li>
+      <li class="nav-item">
+        <a href="logout.php" class="nav-link">登出</a>
+      </li>
+      <?php } ?>
     </ul>
   </div>
 </nav>
