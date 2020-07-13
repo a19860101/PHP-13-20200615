@@ -29,7 +29,7 @@
                 建立時間:<?php echo $row["create_at"];?>
             <div>
             </div>
-                最後更新時間:<?php echo $row["create_at"];?>
+                最後更新時間:<?php echo $row["update_at"];?>
             </div>
         </div>
     </div>
