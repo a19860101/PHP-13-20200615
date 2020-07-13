@@ -11,7 +11,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link">登入</a>
+        <a href="login.php" class="nav-link">登入</a>
       </li>
       <li class="nav-item">
         <a href="#" class="nav-link">申請會員</a>
