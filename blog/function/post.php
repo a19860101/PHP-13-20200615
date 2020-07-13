@@ -23,7 +23,11 @@
     function show($id){
         try{
             global $pdo;
-            $sql = "SELECT * FROM posts WHERE id = ?";
+            $sql = "SELECT posts.*,categories.title AS c_title FROM posts 
+                    LEFT JOIN categories
+                    ON posts.c_id = categories.id
+                    WHERE posts.id = ?
+                ";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([$id]);
             $row = $stmt->fetch();
