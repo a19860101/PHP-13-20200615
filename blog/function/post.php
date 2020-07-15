@@ -22,6 +22,29 @@
             echo $e->getMessage();
         }
     }
+    function showAllWithCate($c_id,$order="DESC"){
+        try {
+            global $pdo;
+            $sql = "
+                SELECT posts.* , members.user ,categories.title AS c_title FROM posts 
+                LEFT JOIN categories
+                ON posts.c_id = categories.id
+                LEFT JOIN members
+                ON posts.m_id = members.id
+                WHERE c_id = ?
+                ORDER BY id {$order}
+            ";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$c_id]);
+            $rows = array();
+            while($row = $stmt->fetch()){
+               $rows[] = $row;
+            }
+            return $rows;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
     function show($id){
         try{
             global $pdo;
