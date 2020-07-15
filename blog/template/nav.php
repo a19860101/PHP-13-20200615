@@ -9,6 +9,11 @@
       <li class="nav-item active">
         <a class="nav-link" href="create_post.php">新增文章</a>
       </li>
+      <?php if($_SESSION && $_SESSION["LV"] == 0){?>
+      <li class="nav-item">
+        <a class="nav-link" href="admin/member-list.php">會員管理</a>
+      </li>
+      <?php }?>
     </ul>
     <ul class="navbar-nav ml-auto">
     <?php if(!$_SESSION){ ?>
