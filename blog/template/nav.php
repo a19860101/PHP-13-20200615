@@ -19,7 +19,7 @@
         <a href="login.php" class="nav-link">登入</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">申請會員</a>
+        <a href="register.php" class="nav-link">申請會員</a>
       </li>
       <?php }else{ ?>
       <li class="nav-item">
