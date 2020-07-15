@@ -10,7 +10,7 @@
                 </div>
                 <div class="form-group">
                     <label for="pw">密碼</label>
-                    <input type="text" name="pw" id="pw" class="form-control">
+                    <input type="password" name="pw" id="pw" class="form-control">
                 </div>
                 <input type="submit" class="btn btn-primary" value="登入">
             </form>
