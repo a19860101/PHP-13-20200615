@@ -1,10 +1,12 @@
 <?php
     include("../pdo.php");
-    include("../function/user.php");
+    include("../function/user.php"); 
+    include("../function/auth.php");
     $users = showAllUser("ASC");
 ?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>
+<?php admin_only();?>
 <div class="container">
     <div class="row">
         <div class="col-12">

@@ -1,10 +1,12 @@
 <?php
     include("pdo.php");
     include("function/cate.php");
+    include("function/auth.php");
     $rows = showAllCate();
 ?>
 <?php include("template/header.php");?>
 <?php include("template/nav.php");?>
+<?php user_only() ?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-10">

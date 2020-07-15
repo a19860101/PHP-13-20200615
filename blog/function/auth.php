@@ -27,4 +27,14 @@
         session_start();
         session_destroy();
     }
+    function admin_only(){
+        if(!$_SESSION || $_SESSION["LV"] != 0){
+            header("Location:../index.php");
+        }
+    }   
+    function user_only(){
+        if(!$_SESSION){
+            header("Location:index.php");
+        }
+    }
     
