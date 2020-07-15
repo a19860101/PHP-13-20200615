@@ -3,8 +3,8 @@
     include("../function/user.php");
     $users = showAllUser("ASC");
 ?>
-<?php include("../template/header.php"); ?>
-<?php include("../template/nav.php"); ?>
+<?php include("template/header.php"); ?>
+<?php include("template/nav.php"); ?>
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -39,4 +39,4 @@
         </div>
     </div>
 </div>
-<?php include("../template/footer.php"); ?>
+<?php include("template/footer.php"); ?>
