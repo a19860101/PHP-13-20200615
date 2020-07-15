@@ -4,9 +4,11 @@
             global $pdo;
             // $sql = "SELECT * FROM posts ORDER BY id {$order}";
             $sql = "
-                SELECT posts.* ,categories.title AS c_title FROM posts 
+                SELECT posts.* , members.user ,categories.title AS c_title FROM posts 
                 LEFT JOIN categories
                 ON posts.c_id = categories.id
+                LEFT JOIN members
+                ON posts.m_id = members.id
                 ORDER BY id {$order}
             ";
             $stmt = $pdo->prepare($sql);
