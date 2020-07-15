@@ -14,6 +14,7 @@
             $row = $stmt->fetch();
             if($pw == $row["pw"]){
                 $_SESSION["USER"] = $user;
+                $_SESSION["ID"] = $row["id"];
                 $_SESSION["LV"] = $row["level"];
                 echo "<script>alert('登入成功');</script>";
             }else{

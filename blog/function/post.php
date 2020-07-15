@@ -25,9 +25,11 @@
     function show($id){
         try{
             global $pdo;
-            $sql = "SELECT posts.*,categories.title AS c_title FROM posts 
+            $sql = "SELECT posts.*,members.user,categories.title AS c_title FROM posts 
                     LEFT JOIN categories
                     ON posts.c_id = categories.id
+                    LEFT JOIN members
+                    ON posts.m_id = members.id
                     WHERE posts.id = ?
                 ";
             $stmt = $pdo->prepare($sql);

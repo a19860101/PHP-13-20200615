@@ -10,7 +10,7 @@
         <div class="col-10 my-5">
             <h2><?php echo $row["title"];?></h2>
             <div>
-                作者:<?php echo $row["m_id"];?>
+                作者:<?php echo $row["user"];?>
                 分類:<?php echo $row["c_title"];?>
                 
             </div>
