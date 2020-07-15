@@ -62,3 +62,20 @@
             echo $e->getMessage();
         }
     }
+    function switchLevel($id,$level){
+        try {
+            global $pdo;
+            if($level == 0){
+                $level = 1;
+            }else{
+                $level = 0;
+            }
+            $sql = "UPDATE members SET level=? WHERE id=?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$level,$id]);
+            
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+
+    }

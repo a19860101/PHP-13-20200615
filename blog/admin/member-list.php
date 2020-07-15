@@ -22,6 +22,17 @@
                     <td><?php echo $user["user"];?></td>
                     <td><?php echo $user["create_at"];?></td>
                     <td><?php echo $user["level"]==1?"一般會員":"管理員";?></td>
+                    <td>
+                        <form action="switchLevel.php" method="post">
+                            <input type="hidden" name="id" value="<?php echo $user["id"];?>">
+                            <input type="hidden" name="level" value="<?php echo $user["level"];?>">
+                            <?php if($user["level"] == 0){ ?>
+                            <input type="submit" value="切換權限" class="btn btn-danger">
+                            <?php }else{ ?>
+                            <input type="submit" value="切換權限" class="btn btn-success">
+                            <?php } ?>
+                        </form>
+                    </td>
                 </tr>
                 <?php } ?>
             </table>
