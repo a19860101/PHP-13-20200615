@@ -22,7 +22,16 @@
     $target = "images/{$name}";
     if($error == 0){
         if(move_uploaded_file($tmp_name,$target)){
-            echo "上傳成功";
-            header("Refresh:1;url=index.php");
+            try{
+                include("pdo.php");
+                $title = $_POST["title"];
+                $sql = "INSERT INTO images(title,path,create_at)VALUES(?,?,?)";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute([$title,$name,$now]);
+                echo "上傳成功";
+                header("Refresh:1;url=index.php");
+            }catch(PDOException $e){
+                echo $e->getMessage();
+            }
         }
     }
