@@ -1,8 +1,8 @@
 <?php
     include("pdo.php");
-    include("function/cate.php");
+    // include("function/cate.php");
     include("function/auth.php");
-    $rows = showAllCate();
+    // $rows = showAllCate();
 ?>
 <?php include("template/header.php");?>
 <?php include("template/nav.php");?>
@@ -22,7 +22,7 @@
                 <div class="form-group">
                     <label for="c_id">文章分類</label>
                     <select name="c_id" id="c_id" class="form-control">
-                    <?php foreach($rows as $row){ ?>
+                    <?php foreach($cates as $row){ ?>
                         <option value="<?php echo $row["id"];?>"><?php echo $row["title"];?></option>
                     <?php } ?>
                     </select>
