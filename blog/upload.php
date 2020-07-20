@@ -1,4 +1,4 @@
 <?php
 
     include("function/post.php");
-    uploadImg($_FILES["img"]);
+    echo uploadImg($_FILES["img"]);

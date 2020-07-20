@@ -63,12 +63,12 @@
             echo $e->getMessage();
         }
     }
-    function store($title,$content,$m_id,$c_id,$create_at,$update_at){
+    function store($title,$content,$m_id,$c_id,$create_at,$update_at,$path){
         try {
             global $pdo;            
-            $sql = "INSERT INTO posts(title,content,m_id,c_id,create_at,update_at)VALUES(?,?,?,?,?,?)";
+            $sql = "INSERT INTO posts(title,content,m_id,c_id,create_at,update_at,path)VALUES(?,?,?,?,?,?,?)";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute([$title,$content,$m_id,$c_id,$create_at,$update_at]);
+            $stmt->execute([$title,$content,$m_id,$c_id,$create_at,$update_at,$path]);
         }catch(PDOException $e){
             echo $e->getMessage();
         }
@@ -118,8 +118,9 @@
         $target = "images/{$name}";
         if($error == 0){
             if(move_uploaded_file($tmp_name,$target)){
-                echo "上傳成功";
-                header("Refresh:1;url=index.php");
+                return $name;
+                // echo "上傳成功";
+                // header("Refresh:1;url=index.php");
             }
         }
     }

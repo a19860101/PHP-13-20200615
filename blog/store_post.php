@@ -8,6 +8,6 @@
     $c_id = $_POST["c_id"];
     $create_at = $now;
     $update_at = $now;
-
-    store($title,$content,$m_id,$c_id,$create_at,$update_at);
+    $path = ""; 
+    store($title,$content,$m_id,$c_id,$create_at,$update_at,$path);
     header("Location:index.php");
