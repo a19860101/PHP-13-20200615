@@ -18,7 +18,7 @@
                     <input type="file" name="img">
                     <?php }else{ ?>
                     <img src="images/<?php echo $row["path"];?>" width="150">
-                    <a href="#" class="btn btn-danger btn-sm">刪除</a>
+                    <a href="update_path.php?id=<?php echo $row["id"];?>&path=<?php echo $row["path"];?>" class="btn btn-danger btn-sm">刪除</a>
                     <?php } ?>
                 </div>
                 <div class="form-group">
