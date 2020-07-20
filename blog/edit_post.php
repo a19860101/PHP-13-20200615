@@ -1,9 +1,7 @@
 <?php 
     include("pdo.php");
     include("function/post.php");
-    include("function/cate.php");
     $row = show($_GET["id"]);
-    $cates = showAllCate();
 ?>
 <?php include("template/header.php");?>
 <?php include("template/nav.php");?>
@@ -14,6 +12,14 @@
                 <div class="form-group">
                     <label for="title">文章標題</label>
                     <input type="text" name="title" id="title" class="form-control" value="<?php echo $row["title"];?>">
+                </div>
+                <div>
+                    <?php if($row["path"] == "no-pic.png"){ ?>
+                    <input type="file" name="img">
+                    <?php }else{ ?>
+                    <img src="images/<?php echo $row["path"];?>" width="150">
+                    <a href="#" class="btn btn-danger btn-sm">刪除</a>
+                    <?php } ?>
                 </div>
                 <div class="form-group">
                     <label for="content">文章內文</label>
