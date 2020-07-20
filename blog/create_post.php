@@ -10,10 +10,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-10">
-            <form action="store_post.php" method="post">
+            <form action="store_post.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="title">文章標題</label>
                     <input type="text" name="title" id="title" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="file" name="img">
                 </div>
                 <div class="form-group">
                     <label for="content">文章內文</label>
