@@ -9,7 +9,7 @@
     $create_at = $now;
     $update_at = $now;
     if($_FILES["img"]["name"] == ""){
-        $path = ""; 
+        $path = "no-pic.png"; 
     }else{
         $path = uploadImg($_FILES["img"]);
     }
