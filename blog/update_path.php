@@ -3,6 +3,7 @@
         include('pdo.php');
 
         unlink("images/".$_GET["path"]);
+        unlink("thumbs/".$_GET["path"]);
 
         $path = "no-pic.png";
         $id = $_GET["id"];

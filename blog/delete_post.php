@@ -4,6 +4,7 @@
 
     if($_POST["path"] != "no-pic.png"){
         unlink("images/".$_POST["path"]);
+        unlink("thumbs/".$_POST["path"]);
     }
 
     delete($_POST["id"]);

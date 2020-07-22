@@ -14,6 +14,9 @@
                 分類:<?php echo $row["c_title"];?>
                 
             </div>
+            <div>
+                <img src="images/<?php echo $row["path"];?>" class="w-100">
+            </div>
             <div class="my-4">
                 <?php echo $row["content"];?>
             </div>

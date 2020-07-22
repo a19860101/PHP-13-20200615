@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <?php foreach($rows as $row){ ?>
         <div class="col-10 my-3 border p-5">
-            <img src="images/<?php echo $row["path"];?>" class="w-100">
+            <img src="thumbs/<?php echo $row["path"];?>" class="w-100">
             <h2 class="my-3"><?php echo $row["title"];?></h2>
             <span>分類:<?php echo $row["c_title"];?></span>
             <br>
