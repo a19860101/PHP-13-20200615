@@ -18,7 +18,7 @@
     $new_canvas = imagecreatetruecolor($new_w,$new_h);
     imagecopyresampled($new_canvas,$canvas,0,0,0,0,$new_w,$new_h,$canvas_w,$canvas_h);
 
-    imagejpeg($new_canvas,"123.jpg");
-    imagepng($new_canvas,"123.png");
-    imagegif($new_canvas,"123.gif");
+    imagejpeg($new_canvas,"images/456.jpg");
+    imagepng($new_canvas,"images/456.png");
+    imagegif($new_canvas,"images/456.gif");
 
