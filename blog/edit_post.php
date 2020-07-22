@@ -15,10 +15,14 @@
                 </div>
                 <div>
                     <?php if($row["path"] == "no-pic.png"){ ?>
+                    
                     <input type="file" name="img">
+                    
                     <?php }else{ ?>
+                    <input type="hidden" name="img" value="<?php echo $row["path"];?>">
                     <img src="images/<?php echo $row["path"];?>" width="150">
                     <a href="update_path.php?id=<?php echo $row["id"];?>&path=<?php echo $row["path"];?>" class="btn btn-danger btn-sm">刪除</a>
+                    
                     <?php } ?>
                 </div>
                 <div class="form-group">
